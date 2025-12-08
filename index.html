@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anaesthetic Logbook</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#2c3e50">
+</head>
+<body>
+    <header>
+        <h1>Anaesthetic Logbook</h1>
+    </header>
+
+    <main>
+        <section id="case-form">
+            <h2>Add Anaesthetic Case</h2>
+            <form id="logbookForm">
+                <label>Date:
+                    <input type="date" id="date" required>
+                    <button type="button" id="todayBtn">Today</button>
+                    <button type="button" id="yesterdayBtn">Yesterday</button>
+                </label>
+                <label>Session:
+                    <select id="session">
+                        <option>AM</option>
+                        <option>PM</option>
+                        <option>Evening</option>
+                        <option>Night</option>
+                    </select>
+                </label>
+                <label>Specialty:
+                    <select id="specialty">
+                        <option>General Surgery</option>
+                        <option>ENT</option>
+                        <option>Orthopaedics</option>
+                        <option>Neurosurgery</option>
+                        <option>Cardiothoracic</option>
+                        <option>Other</option>
+                    </select>
+                    <input type="text" id="specialtyOther" placeholder="If Other, specify">
+                </label>
+                <label>Operation: <input type="text" id="operation" required></label>
+                <label>Priority:
+                    <select id="priority">
+                        <option>Elective</option>
+                        <option>Expedited</option>
+                        <option>Urgent</option>
+                        <option>Immediate</option>
+                    </select>
+                </label>
+                <label>ASA Grade:
+                    <select id="asa">
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                    </select>
+                </label>
+                <label>Age: <input type="number" id="age" min="0"></label>
+                <label>Anaesthetic Type:
+                    <select id="anaestheticType">
+                        <option>Volatile</option>
+                        <option>TIVA</option>
+                        <option>Sedation</option>
+                        <option>Regional only</option>
+                    </select>
+                </label>
+                <label>Airway Used:
+                    <select id="airway">
+                        <option>LMA</option>
+                        <option>ETT</option>
+                        <option>Mask</option>
+                        <option>DLT</option>
+                        <option>Trache</option>
+                    </select>
+                </label>
+                <label>Regional Technique:
+                    <select id="regional">
+                        <option>Spinal</option>
+                        <option>Epidural</option>
+                        <option>Supraclavicular</option>
+                        <option>Other</option>
+                    </select>
+                    <input type="text" id="regionalOther" placeholder="If Other, specify">
+                </label>
+                <label>Procedures Performed:
+                    <input type="checkbox" id="arterialLine"> Arterial Line
+                    <input type="checkbox" id="centralLine"> Central Line
+                    <input type="checkbox" id="vasCath"> Vas Cath
+                    <input type="checkbox" id="gasInduction"> Gas Induction
+                    <input type="checkbox" id="nasalIntubation"> Nasal Intubation
+                    <input type="checkbox" id="fiberopticAwake"> Fibreoptic Awake
+                    <input type="checkbox" id="fiberopticAsleep"> Fibreoptic Asleep
+                </label>
+                <label>Teaching:
+                    <select id="teaching">
+                        <option>Trainee</option>
+                        <option>Novice</option>
+                        <option>Med Student</option>
+                        <option>Anaesthetic Associate</option>
+                        <option>Other</option>
+                    </select>
+                </label>
+                <label>Location:
+                    <select id="location">
+                        <option>Pinderfields</option>
+                        <option>Dewsbury</option>
+                        <option>Pontefract</option>
+                        <option>Methley</option>
+                        <option>Elland</option>
+                        <option>Other</option>
+                    </select>
+                </label>
+                <label>Incidents / Notes:
+                    <textarea id="incidents" rows="3"></textarea>
+                </label>
+                <button type="submit">Add Case</button>
+                <button type="button" id="duplicateCase">Duplicate Last Case</button>
+            </form>
+        </section>
+
+        <section id="case-list">
+            <h2>Logged Cases</h2>
+            <div id="cases"></div>
+            <button id="exportCSV">Export CSV</button>
+            <input type="file" id="importCSV" accept=".csv">
+        </section>
+
+        <section id="charts">
+            <h2>Analytics</h2>
+            <canvas id="chartCasesPerMonth"></canvas>
+            <canvas id="chartAnaestheticType"></canvas>
+        </section>
+    </main>
+
+    <script src="localforage.min.js"></script>
+    <script src="papaparse.min.js"></script>
+    <script src="chart.umd.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
