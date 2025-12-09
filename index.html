@@ -31,17 +31,19 @@
                 </label>
 
                 <label>Specialty
-                    <select id="specialty" required>
-                        <option>ENT</option>
-                        <option>General Surgery</option>
-                        <option>Trauma & Orthopaedics</option>
-                        <option>Plastics</option>
-                        <option>Urology</option>
-                        <option>Gynaecology</option>
-                        <option>MaxFax</option>
-                        <option value="other">Other</option>
-                    </select>
-                </label>
+    <div class="specialty-row">
+        <select id="specialty" required>
+            <option>ENT</option>
+            <option>General Surgery</option>
+            <option>Trauma & Orthopaedics</option>
+            <option>Plastics</option>
+            <option>Urology</option>
+            <option>Gynaecology</option>
+            <option>MaxFax</option>
+        </select>
+        <button type="button" id="addSpecialtyBtn" class="small-btn">Add</button>
+    </div>
+</label>
 
                 <label>Operation
                     <input type="text" id="operation" required />
@@ -92,17 +94,16 @@
                     <input type="text" id="regional" />
                 </label>
 
-                <label>Procedures Performed
-                    <select id="procedures" multiple>
-                        <option>Arterial line</option>
-                        <option>Central line</option>
-                        <option>Vas Cath</option>
-                        <option>Gas induction</option>
-                        <option>Nasal intubation</option>
-                        <option>Fibreoptic awake</option>
-                        <option>Fibreoptic asleep</option>
-                    </select>
-                </label>
+                <fieldset class="checkbox-group">
+    <legend>Procedures Performed</legend>
+    <label><input type="checkbox" name="procedure" value="Arterial line"> Arterial line</label>
+    <label><input type="checkbox" name="procedure" value="Central line"> Central line</label>
+    <label><input type="checkbox" name="procedure" value="Vas Cath"> Vas Cath</label>
+    <label><input type="checkbox" name="procedure" value="Gas induction"> Gas induction</label>
+    <label><input type="checkbox" name="procedure" value="Nasal intubation"> Nasal intubation</label>
+    <label><input type="checkbox" name="procedure" value="Fibreoptic awake"> Fibreoptic awake</label>
+    <label><input type="checkbox" name="procedure" value="Fibreoptic asleep"> Fibreoptic asleep</label>
+</fieldset>
 
                 <label>Teaching
                     <select id="teaching">
@@ -131,7 +132,8 @@
                 </label>
 
                 <button type="submit" class="primary-btn">Add Case</button>
-            </form>
+            <button type="button" id="duplicateBtn" class="secondary-btn">Duplicate Last Case</button>
+        </form>
         </div>
 
         <div class="card">
