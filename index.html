@@ -13,55 +13,108 @@
   </header>
 
   <main>
-    <section class="card">
-      <h2>Add Case</h2>
-      <form id="case-form">
-        <label>Date</label>
-        <input type="date" id="date" required />
+        <form id="caseForm">
+            <h2>Add New Case</h2>
 
-        <label>Session</label>
-        <select id="session">
-          <option>AM</option>
-          <option>PM</option>
-          <option>Evening</option>
-          <option>Night</option>
-        </select>
+            <label>Date</label>
+            <input type="date" id="date" required />
+            <button type="button" id="todayBtn">Today</button>
+            <button type="button" id="yesterdayBtn">Yesterday</button>
 
-        <label>Specialty</label>
-        <select id="specialty">
-          <option>General Surgery</option>
-          <option>Trauma & Orthopaedics</option>
-          <option>ENT</option>
-          <option>Gynaecology</option>
-          <option>Urology</option>
-          <option>Obstetrics</option>
-          <option>Paediatrics</option>
-          <option>Vascular</option>
-          <option>Other</option>
-        </select>
+            <label>Session</label>
+            <select id="session" required>
+                <option>AM</option>
+                <option>PM</option>
+                <option>Evening</option>
+                <option>Night</option>
+            </select>
 
-        <label>Operation</label>
-        <input type="text" id="operation" placeholder="Operation details" required />
+            <label>Specialty</label>
+            <select id="specialtySelect"></select>
+            <input type="text" id="newSpecialty" placeholder="Add new specialty" />
+            <button type="button" id="addSpecialtyBtn">Add</button>
 
-        <button type="submit" class="btn-primary">Add Case</button>
-      </form>
-    </section>
+            <label>Operation</label>
+            <input type="text" id="operation" required />
 
-    <section class="card">
-      <h2>Saved Cases</h2>
-      <table id="cases-table">
-        <thead>
-          <tr>
-            <th>Date</th>
-            <th>Session</th>
-            <th>Specialty</th>
-            <th>Operation</th>
-          </tr>
-        </thead>
-        <tbody></tbody>
-      </table>
-    </section>
-  </main>
+            <label>Priority</label>
+            <select id="priority" required>
+                <option>Elective</option>
+                <option>Expedited</option>
+                <option>Urgent</option>
+                <option>Immediate</option>
+            </select>
+
+            <label>ASA Grade</label>
+            <select id="asa" required>
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+            </select>
+
+            <label>Age</label>
+            <input type="number" id="age" required />
+
+            <label>Anaesthetic Type</label>
+            <select id="anaestheticType" required>
+                <option>Volatile</option>
+                <option>TIVA</option>
+                <option>Sedation</option>
+                <option>Regional only</option>
+            </select>
+
+            <label>Airway Used</label>
+            <select id="airway" required>
+                <option>LMA</option>
+                <option>ETT</option>
+                <option>Mask</option>
+                <option>DLT</option>
+                <option>Trache</option>
+            </select>
+
+            <label>Regional Technique</label>
+            <select id="regionalSelect"></select>
+            <input type="text" id="newRegional" placeholder="Add new regional technique" />
+            <button type="button" id="addRegionalBtn">Add</button>
+
+            <label>Procedures Performed</label>
+            <div class="checkboxes">
+                <label><input type="checkbox" value="Arterial line" /> Arterial line</label>
+                <label><input type="checkbox" value="Central line" /> Central line</label>
+                <label><input type="checkbox" value="Vas Cath" /> Vas Cath</label>
+                <label><input type="checkbox" value="Gas induction" /> Gas induction</label>
+                <label><input type="checkbox" value="Nasal intubation" /> Nasal intubation</label>
+                <label><input type="checkbox" value="Fibreoptic awake" /> Fibreoptic awake</label>
+                <label><input type="checkbox" value="Fibreoptic asleep" /> Fibreoptic asleep</label>
+            </div>
+
+            <label>Teaching</label>
+            <select id="teaching">
+                <option>None</option>
+                <option>Trainee</option>
+                <option>Novice</option>
+                <option>Med student</option>
+                <option>Anaesthetic associate</option>
+                <option>Other</option>
+            </select>
+
+            <label>Location</label>
+            <select id="location" required>
+                <option>Pinderfields</option>
+                <option>Dewsbury</option>
+                <option>Pontefract</option>
+                <option>Methley</option>
+                <option>Elland</option>
+                <option>Other</option>
+            </select>
+
+            <label>Incidents</label>
+            <textarea id="incidents" rows="3"></textarea>
+
+            <button type="submit" class="primary">Save Case</button>
+        </form>
+    </main>
 
   <script src="localforage.min.js"></script>
   <script src="papaparse.min.js"></script>
