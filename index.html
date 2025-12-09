@@ -1,124 +1,148 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Anaesthetic Logbook</title>
-  <link rel="stylesheet" href="style.css" />
-  <link rel="manifest" href="manifest.json" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Anaesthetic Logbook</title>
+    <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <header>
-    <h1>Anaesthetic Logbook</h1>
-  </header>
+    <header>
+        <h1>Anaesthetic Logbook</h1>
+    </header>
 
-  <main>
-        <form id="caseForm">
+    <main>
+        <!-- Card container -->
+        <div class="card">
             <h2>Add New Case</h2>
 
-            <label>Date</label>
-            <input type="date" id="date" required />
-            <button type="button" id="todayBtn">Today</button>
-            <button type="button" id="yesterdayBtn">Yesterday</button>
+            <form id="caseForm">
+                <label>Date
+                    <input type="date" id="date" required />
+                </label>
 
-            <label>Session</label>
-            <select id="session" required>
-                <option>AM</option>
-                <option>PM</option>
-                <option>Evening</option>
-                <option>Night</option>
-            </select>
+                <label>Session
+                    <select id="session" required>
+                        <option>AM</option>
+                        <option>PM</option>
+                        <option>Evening</option>
+                        <option>Night</option>
+                    </select>
+                </label>
 
-            <label>Specialty</label>
-            <select id="specialtySelect"></select>
-            <input type="text" id="newSpecialty" placeholder="Add new specialty" />
-            <button type="button" id="addSpecialtyBtn">Add</button>
+                <label>Specialty
+                    <select id="specialty" required>
+                        <option>ENT</option>
+                        <option>General Surgery</option>
+                        <option>Trauma & Orthopaedics</option>
+                        <option>Plastics</option>
+                        <option>Urology</option>
+                        <option>Gynaecology</option>
+                        <option>MaxFax</option>
+                        <option value="other">Other</option>
+                    </select>
+                </label>
 
-            <label>Operation</label>
-            <input type="text" id="operation" required />
+                <label>Operation
+                    <input type="text" id="operation" required />
+                </label>
 
-            <label>Priority</label>
-            <select id="priority" required>
-                <option>Elective</option>
-                <option>Expedited</option>
-                <option>Urgent</option>
-                <option>Immediate</option>
-            </select>
+                <label>Priority
+                    <select id="priority" required>
+                        <option>Elective</option>
+                        <option>Expedited</option>
+                        <option>Urgent</option>
+                        <option>Immediate</option>
+                    </select>
+                </label>
 
-            <label>ASA Grade</label>
-            <select id="asa" required>
-                <option>1</option>
-                <option>2</option>
-                <option>3</option>
-                <option>4</option>
-            </select>
+                <label>ASA Grade
+                    <select id="asa" required>
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                    </select>
+                </label>
 
-            <label>Age</label>
-            <input type="number" id="age" required />
+                <label>Age
+                    <input type="number" id="age" min="0" />
+                </label>
 
-            <label>Anaesthetic Type</label>
-            <select id="anaestheticType" required>
-                <option>Volatile</option>
-                <option>TIVA</option>
-                <option>Sedation</option>
-                <option>Regional only</option>
-            </select>
+                <label>Anaesthetic Type
+                    <select id="anaesthetic" required>
+                        <option>Volatile</option>
+                        <option>TIVA</option>
+                        <option>Sedation</option>
+                        <option>Regional only</option>
+                    </select>
+                </label>
 
-            <label>Airway Used</label>
-            <select id="airway" required>
-                <option>LMA</option>
-                <option>ETT</option>
-                <option>Mask</option>
-                <option>DLT</option>
-                <option>Trache</option>
-            </select>
+                <label>Airway Used
+                    <select id="airway" required>
+                        <option>LMA</option>
+                        <option>ETT</option>
+                        <option>Mask</option>
+                        <option>DLT</option>
+                        <option>Trache</option>
+                    </select>
+                </label>
 
-            <label>Regional Technique</label>
-            <select id="regionalSelect"></select>
-            <input type="text" id="newRegional" placeholder="Add new regional technique" />
-            <button type="button" id="addRegionalBtn">Add</button>
+                <label>Regional Technique
+                    <input type="text" id="regional" />
+                </label>
 
-            <label>Procedures Performed</label>
-            <div class="checkboxes">
-                <label><input type="checkbox" value="Arterial line" /> Arterial line</label>
-                <label><input type="checkbox" value="Central line" /> Central line</label>
-                <label><input type="checkbox" value="Vas Cath" /> Vas Cath</label>
-                <label><input type="checkbox" value="Gas induction" /> Gas induction</label>
-                <label><input type="checkbox" value="Nasal intubation" /> Nasal intubation</label>
-                <label><input type="checkbox" value="Fibreoptic awake" /> Fibreoptic awake</label>
-                <label><input type="checkbox" value="Fibreoptic asleep" /> Fibreoptic asleep</label>
-            </div>
+                <label>Procedures Performed
+                    <select id="procedures" multiple>
+                        <option>Arterial line</option>
+                        <option>Central line</option>
+                        <option>Vas Cath</option>
+                        <option>Gas induction</option>
+                        <option>Nasal intubation</option>
+                        <option>Fibreoptic awake</option>
+                        <option>Fibreoptic asleep</option>
+                    </select>
+                </label>
 
-            <label>Teaching</label>
-            <select id="teaching">
-                <option>None</option>
-                <option>Trainee</option>
-                <option>Novice</option>
-                <option>Med student</option>
-                <option>Anaesthetic associate</option>
-                <option>Other</option>
-            </select>
+                <label>Teaching
+                    <select id="teaching">
+                        <option>None</option>
+                        <option>Trainee</option>
+                        <option>Novice</option>
+                        <option>Medical student</option>
+                        <option>Anaesthetic associate</option>
+                        <option>Other</option>
+                    </select>
+                </label>
 
-            <label>Location</label>
-            <select id="location" required>
-                <option>Pinderfields</option>
-                <option>Dewsbury</option>
-                <option>Pontefract</option>
-                <option>Methley</option>
-                <option>Elland</option>
-                <option>Other</option>
-            </select>
+                <label>Location
+                    <select id="location" required>
+                        <option>Pinderfields</option>
+                        <option>Dewsbury</option>
+                        <option>Pontefract</option>
+                        <option>Methley</option>
+                        <option>Elland</option>
+                        <option>Other</option>
+                    </select>
+                </label>
 
-            <label>Incidents</label>
-            <textarea id="incidents" rows="3"></textarea>
+                <label>Incidents
+                    <textarea id="incidents" rows="3"></textarea>
+                </label>
 
-            <button type="submit" class="primary">Save Case</button>
-        </form>
+                <button type="submit" class="primary-btn">Add Case</button>
+            </form>
+        </div>
+
+        <div class="card">
+            <h2>Saved Cases</h2>
+            <div id="caseList"></div>
+        </div>
     </main>
 
-  <script src="localforage.min.js"></script>
-  <script src="papaparse.min.js"></script>
-  <script src="chart.umd.js"></script>
-  <script src="app.js"></script>
+    <script src="localforage.min.js"></script>
+    <script src="papaparse.min.js"></script>
+    <script src="chart.umd.js"></script>
+    <script src="app.js"></script>
 </body>
 </html>
