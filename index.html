@@ -90,9 +90,17 @@
                     </select>
                 </label>
 
-                <label>Regional Technique
-                    <input type="text" id="regional" />
-                </label>
+                <fieldset class="checkbox-group">
+    <legend>Regional Techniques</legend>
+    <label><input type="checkbox" name="regional" value="Spinal"> Spinal</label>
+    <label><input type="checkbox" name="regional" value="Epidural"> Epidural</label>
+    <label><input type="checkbox" name="regional" value="Supraclavicular"> Supraclavicular</label>
+    <label><input type="checkbox" name="regional" value="Interscalene"> Interscalene</label>
+    <label><input type="checkbox" name="regional" value="Fascia Iliaca"> Fascia Iliaca</label>
+    <label><input type="checkbox" name="regional" value="Popliteal"> Popliteal</label>
+    <label><input type="checkbox" name="regional" value="Other"> Other</label>
+    <button type="button" id="addRegionalBtn" class="small-btn">Add</button>
+</fieldset>
 
                 <fieldset class="checkbox-group">
     <legend>Procedures Performed</legend>
